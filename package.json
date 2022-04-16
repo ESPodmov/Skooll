@@ -37,6 +37,7 @@
     "@web3-react/walletlink-connector": "^6.2.13",
     "buffer": "^6.0.3",
     "clean-webpack-plugin": "^4.0.0",
+    "ethereumjs-abi": "^0.6.8",
     "jquery": "^3.6.0",
     "moralis": "^1.5.5",
     "react": "^17.0.2",
