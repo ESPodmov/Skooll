@@ -15,7 +15,7 @@ module.exports = {
         filename: '[name].bundle.js',
         publicPath: "",
     },
-    mode: 'development',
+    mode: 'production',
     devServer: {
         historyApiFallback: true,
         watchFiles: path.resolve(__dirname, './dist'),
