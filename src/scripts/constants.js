@@ -264,10 +264,10 @@ export const abi = [{"inputs": [], "stateMutability": "nonpayable", "type": "con
     "outputs": [{"internalType": "uint256[]", "name": "", "type": "uint256[]"}],
     "stateMutability": "view",
     "type": "function"
-}, {"inputs": [], "name": "withdraw", "outputs": [], "stateMutability": "nonpayable", "type": "function"}];
+}, {"inputs": [], "name": "withdraw", "outputs": [], "stateMutability": "nonpayable", "type": "function"}]
 
 
-export const contractAddress = "0xfd0C3bFAc4c1D8445B7E9B2aDbf349523F841405";
+export const contractAddress = "0x0E1a42EFa91b774014F5bB0eC34626D962399388";
 
 const chain = 'mumbai';
 

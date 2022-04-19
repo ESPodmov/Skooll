@@ -4,20 +4,23 @@ import Web3 from "./web3.min";
 import "./jquery.color.js"
 import Moralis from "moralis";
 import {ID, URL_LINE} from "../../pr/m";
+import("../index.html")
+import("../styles/style.css")
 
 
-// const firstRm = document.getElementById("firstRm");
-// const secondRm = document.getElementById("secondRm");
-// const thirdRm = document.getElementById("thirdRm");
-// const fourthRm = document.getElementById("fourthRm");
-// const fifthRm = document.getElementById("fifthRm");
 
-// firstRm.onclick = all_edit;
-// secondRm.onclick = all_edit;
-// thirdRm.onclick = all_edit;
-// fourthRm.onclick = all_edit;
-// fifthRm.onclick = all_edit;
+let nav = document.querySelectorAll(".nav");
+function editNavHeight(s){
+    nav.forEach((el)=>{
+        el.style.height = (el.clientHeight * 100 / window.innerWidth + s).toString() + "vw"//expand
+    })
+}
 
+const joinCommunity = document.getElementById("join")
+
+joinCommunity.onclick = ()=>{
+    window.open("https://discord.gg/A67mhBmThy", "_blank")
+}
 
 var animate = function (entries, observer) {
     entries.forEach(entry => {
@@ -38,10 +41,6 @@ const elements = document.querySelectorAll('.needs-animation');
 elements.forEach((element) => {
     observer.observe(element);
 });
-
-// const f_fr = document.getElementById("firstFrame");
-// const s_fr = document.getElementById("secondFrame");
-
 
 var curtainAnim = function (entries, observer) {
     entries.forEach(entry => {
@@ -87,67 +86,6 @@ el.forEach((elem) => {
     curtainObserver.observe(elem)
 });
 
-
-// function f_f(){
-//     if (f_fr.classList.contains("anim-for-r-m-frame")){
-//         f_fr.classList.remove("anim-for-r-m-frame");
-//         return;
-//     } else{
-//         f_fr.classList.add("anim-for-r-m-frame");
-//         return;
-//     }
-//
-// }
-
-
-// const frame_containers = document.querySelectorAll(".r-m-frame")
-
-
-// function remove_frame_animation() {
-//     frame_containers.forEach((fr) => {
-//         fr.classList.remove("anim-for-r-m-frame")
-//     });
-// }
-
-// var close_r_m_frame = function (entries, observer) {
-//     entries.forEach(entry => {
-//
-//         if (!entry.isIntersecting) {
-//             entry.target.classList.remove('anim-for-r-m-frame');
-//             return;
-//         }
-//     });
-// };
-
-// const r_m_observer = new IntersectionObserver(close_r_m_frame);
-//
-// const opened_frame = document.querySelectorAll('.r-m-frame');
-//
-// opened_frame.forEach((elem) => {
-//     r_m_observer.observe(elem);
-// });
-//
-// function all_edit() {
-//     let parentNode = event.target.parentNode;
-//     let frame = parentNode.querySelector(".r-m-frame");
-//     if (frame.classList.contains("anim-for-r-m-frame")) {
-//         frame.classList.remove("anim-for-r-m-frame");
-//         return;
-//     } else {
-//         remove_frame_animation();
-//         frame.classList.add("anim-for-r-m-frame");
-//         return;
-//     }
-// }
-
-// document.querySelector(".r-m-section").addEventListener("click", (ev) => {
-//     let opened = document.querySelector(".anim-for-r-m-frame");
-//     if (!ev.target.classList.contains("anim-for-r-m-frame") && !ev.target.classList.contains("r-m-img")) {
-//         opened.classList.remove("anim-for-r-m-frame");
-//     }
-// })
-
-
 const walletSection = document.querySelector(".sel-wal-sec");
 
 function findParent(el) {
@@ -160,8 +98,14 @@ function findParent(el) {
     }
     return false;
 }
-
+let lastElem = document.querySelector(".e-s")
 const blurForPage = document.getElementById("wal-sec")
+
+function editNavInsideOpenMethods(){
+    nav.forEach((expand)=>{
+        expand.style.height = (lastElem.getBoundingClientRect().top + lastElem.clientHeight + window.pageYOffset) * 100 / window.innerWidth + "vw"// expand
+    })
+}
 
 function open_select_wallet() {
     if (walletSection.classList.contains("opened")) {
@@ -171,6 +115,7 @@ function open_select_wallet() {
     } else {
         walletSection.classList.add("opened");
         blurForPage.classList.add("visible")
+        editNavInsideOpenMethods()
         blur_all_wal()
     }
 }
@@ -180,7 +125,7 @@ let vid = document.querySelectorAll("video")
 
 function blur_all(){
     elem.forEach((el)=>{
-        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container")){
+        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container") && !el.classList.contains("blurForVideo")){
             el.classList.add("blur")
         }
     })
@@ -191,7 +136,7 @@ function blur_all(){
 
 function blur_all_donation(){
     elem.forEach((el)=>{
-        if (!el.classList.contains("navigation") && !el.classList.contains("not-container") && !el.classList.contains("donation")){
+        if (!el.classList.contains("navigation") && !el.classList.contains("not-container") && !el.classList.contains("blurForVideo") && !el.classList.contains("donation")){
             el.classList.add("blur-donat")
         }
     })
@@ -202,7 +147,7 @@ function blur_all_donation(){
 
 function blur_all_wal(){
     elem.forEach((el)=>{
-        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container")){
+        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container") && !el.classList.contains("blurForVideo")){
             el.classList.add("blur-wal")
         }
     })
@@ -213,7 +158,7 @@ function blur_all_wal(){
 
 function unblur_all(){
     elem.forEach((el)=>{
-        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container")){
+        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container") && !el.classList.contains("blurForVideo")){
             el.classList.remove("blur")
         }
     })
@@ -224,7 +169,7 @@ function unblur_all(){
 
 function unblur_all_donation(){
     elem.forEach((el)=>{
-        if (!el.classList.contains("navigation") && !el.classList.contains("not-container") && !el.classList.contains("donation")){
+        if (!el.classList.contains("navigation") && !el.classList.contains("not-container") && !el.classList.contains("blurForVideo") && !el.classList.contains("donation")){
             el.classList.remove("blur-donat")
         }
     })
@@ -235,7 +180,7 @@ function unblur_all_donation(){
 
 function unblur_all_wal(){
     elem.forEach((el)=>{
-        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container")){
+        if (!el.classList.contains("navigation") && !el.classList.contains("mint-w") && !el.classList.contains("sel-wal-sec") && !el.classList.contains("not-container") && !el.classList.contains("blurForVideo")){
             el.classList.remove("blur-wal")
         }
     })
@@ -269,6 +214,7 @@ function openDonation(){
     } else {
         donationWindow.classList.add("o");
         blurForDonation.classList.add("visible")
+        editNavInsideOpenMethods()
         blur_all_donation()
     }
 }
@@ -301,6 +247,7 @@ async function open_mint_window() {
     } else {
         mint_window.classList.add("m-o");
         blurForPageMint.classList.add("visible")
+        editNavInsideOpenMethods()
         blur_all()
     }
 
@@ -340,12 +287,14 @@ faq_blocks.forEach((elem) => {
             description.classList.add("close-faq")
             description.classList.remove("opened-faq");
             plus.classList.remove("opened-plus");
+            editNavHeight(-4.4921875)
             setTimeout(() => {
                 description.classList.remove("close-faq")
             }, 200);
         } else {
             description.classList.add("opened-faq");
             plus.classList.add("opened-plus");
+            editNavHeight(4.4921875)
         }
     })
 })
@@ -527,6 +476,7 @@ function initializeClock(endTime) {
 }
 
 let deadline = "May 11 2022 19:00:00 UTC"
+// let deadline = "April 18 2022 23:00:00 UTC"
 initializeClock(deadline);
 
 
@@ -607,6 +557,7 @@ async function mint() {
                 mintBtn.innerHTML = "Mint"
                 const url = `https://mumbai.polygonscan.com/tx/${mintTransaction.transactionHash}`;
                 updateDB(amount)
+
                 trnsInfo.innerHTML = '<a>You can see your transaction <a target="_blank" style="color: #4BD6B4" href="' + url + '">here</a> </a>'
                 console.log("Minted successfully!", `Transaction Hash: ${mintTransaction.transactionHash}`);
                 add_success("Minted successfully!", 18)
@@ -632,24 +583,14 @@ async function mint() {
 }
 
 
-const instructions = document.getElementById("instructions");
-
-instructions.onclick = () => {
-    updateDB(5)
-};
-
-
 //----------------------------------------------
-
-//npm uninstall react-native-crypto-js удалил не знаю зачем и страшно ли это
-
 
 let metaMask = document.getElementById("metaMask");
 let walletConnect = document.getElementById("walletConnect");
 let coinbase = document.getElementById("coinBase");
 
 
-let chain = "mumbai"
+let chain = "polygon"
 
 async function checkChain() {
     let chainId = 0;
@@ -666,7 +607,6 @@ async function checkChain() {
             });
             return true
         } catch (err) {
-            // This error code indicates that the chain has not been added to MetaMask.
             if (err.code === 4902) {
                 try {
                     if (chain === 'polygon') {
@@ -709,21 +649,16 @@ async function enableWeb3(prov) {
 
 async function createContractInstance(){
     window.contract = await new window.web3.eth.Contract(abi, contractAddress);
-    await window.contract.methods.cost().call().then(result => {
-        cost = result
-    })
-
+    try {
+        await window.contract.methods.cost().call().then(result => {
+            cost = result
+        })
+    } catch (e){
+        console.log(e)
+    }
     priceValue.innerHTML = 'Price per mint: ' + window.web3.utils.fromWei(cost, "ether") + ' matic'
     totalPrice.innerHTML = 'Total: ' + window.web3.utils.fromWei(cost, "ether") + ' matic'
 }
-
-//
-// if (localStorage.getItem("provider") != null){
-//     provider = localStorage.getItem("provider");
-//     console.log("loading...")
-//     console.log(provider)
-// }
-
 
 async function connectToMeta() {
 
@@ -740,7 +675,6 @@ async function connectToMeta() {
         if (window.ethereum.isMetaMask) {
             provider = window.ethereum
         } else {
-            //install metamask
             console.log("install metamask")
             let $link = $('<a class="atagclass" href="https://metamask.io/" target="_blank">here</a>')
             add_warning("It looks like you don't have Metamask, you can install it " + $link.get(0).outerHTML, 37)
@@ -752,7 +686,6 @@ async function connectToMeta() {
         await provider.request({method: 'eth_requestAccounts'});
     } catch (e) {
         if (e.code == 4001) {
-            //you have declained logining
             console.log("you canceled login")
             add_warning("You canceled the login", 18)
         }
@@ -763,7 +696,6 @@ async function connectToMeta() {
 
     await enableWeb3(provider);
 
-    //
     console.log("You have successfully logged in")
     add_success("You have successfully logged in", 25)
 
@@ -785,7 +717,6 @@ async function connectToCoin() {
         if (window.ethereum.isCoinbaseWallet) {
             provider = window.ethereum
         } else {
-            //install coinbase
             console.log("install coinbase wallet")
             let $link = $('<a class="atagclass" href="https://www.coinbase.com/" target="_blank">here</a>')
             add_warning("It looks like you don't have Coinbase, you can install it " + $link.get(0).outerHTML, 37)
@@ -808,7 +739,6 @@ async function connectToCoin() {
 
     await enableWeb3(provider);
 
-    //
     console.log("You have successfully logged in")
     add_success("You have successfully logged in", 25)
 
