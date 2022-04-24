@@ -831,7 +831,7 @@ body {
     height: 20.31vw;
     padding: 0;
     z-index: 3;
-    background-image: url("../sources/BackForMintWindow.png");
+    background-image: url("../sources/BackForMintWindow.webp");
     background-size: 102%;
     background-position: -0.30vw -0.204vw;
     filter: none
@@ -1341,7 +1341,7 @@ body {
 }
 
 .r-m-second {
-    background-image: url('../sources/RoadMap/r-m-second.png')
+    background-image: url('../sources/RoadMap/r-m-second.webp')
 }
 
 .r-m-third {
@@ -1349,11 +1349,11 @@ body {
 }
 
 .r-m-fourth {
-    background-image: url('../sources/RoadMap/r-m-fourth.png')
+    background-image: url('../sources/RoadMap/r-m-fourth.webp')
 }
 
 .r-m-fifth {
-    background-image: url('../sources/RoadMap/r-m-fifth.png')
+    background-image: url('../sources/RoadMap/r-m-fifth.webp')
 }
 
 .r-m-sixth {
