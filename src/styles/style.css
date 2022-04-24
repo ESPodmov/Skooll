@@ -7,38 +7,47 @@ img {
 html {
 
     width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+    /*width: 100%;*/
+    /*overflow-x: hidden;*/
     background: #181A1C;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 100%;
+    padding: 0;
+    border: none;
+    margin: 0;
 }
 
 body {
     width: 100%;
     height: 100%;
+    padding: 0;
+    border: none;
+    margin: 0;
+    /*overflow-x: hidden;*/
 }
 
 .nav {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: -10vw;
+    right: 0;
+    display: inherit;
     /*opacity: 0.5;*/
     z-index: 2;
     transition: 0.5s all ease;
-    width: 110vw;
-    height: 499vw;
+    width: 100%;
+    height: 101%;
     visibility: hidden;
+    padding: 0;
+    overflow: hidden;
+    filter: none
 }
 
 .nav.visible {
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .navigation {
@@ -227,11 +236,13 @@ body {
     transition: all 0.3s linear;
 }
 
-.wal-hov:hover{
+.wal-hov:hover {
     border: 0.13vw #33C9A5 solid;
     background-color: #d7d7d7;
     transform: translateY(-0.2vw);
-}/*for active btn*/
+}
+
+/*for active btn*/
 
 .image-2 {
     height: 70%;
@@ -322,8 +333,9 @@ body {
     background: url(../sources/scratched-surface-texture.png);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: translateY(4vw);
     opacity: 0;
+    transform: translateY(4vw);
+    text-align: center;
 }
 
 .socials {
@@ -358,12 +370,12 @@ body {
     color: #FFFFFF;
     position: relative;
     text-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
-    transform: translateY(3vw);
     opacity: 0;
+    transform: translateY(3vw);
 }
 
 .f-h {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     top: -6vw
@@ -392,7 +404,7 @@ body {
 }
 
 .join-us-btn {
-    width: 28%;
+    width: 23%;
     height: 3.1vw;
     border: none;
     background: linear-gradient(180deg, #FFC700 0%, #FF9900 100%);
@@ -444,6 +456,7 @@ body {
     width: 50%;
     left: 25%;
     transform: translateY(4vw);
+    text-align: center;
     opacity: 0;
 }
 
@@ -547,7 +560,9 @@ body {
 
 .buy-btn-active:hover {
     transform: scale(1.05) translateY(-0.05vw);
-}/*for active btn*/
+}
+
+/*for active btn*/
 
 .img-container {
     width: 0;
@@ -559,9 +574,9 @@ body {
     background: #1C1919;
     text-align: center;
     position: relative;
-    width: 126.5%;
+    width: 100%;
     height: 12.7vw;
-    left: -13.25%;
+    left: 0;
     top: 98vw;
     overflow: hidden;
 }
@@ -679,10 +694,10 @@ body {
     overflow: hidden;
 }
 
-.faq-description a{
+.faq-description a {
     color: #1E2123;
     transition: all 0.2s ease;
-    transition-delay: 0.5s ;
+    transition-delay: 0.5s;
 }
 
 .faq-block-h {
@@ -703,7 +718,7 @@ body {
     color: #cfcfcf;
 }
 
-.opened-faq a{
+.opened-faq a {
     color: #cfcfcf;
 }
 
@@ -714,7 +729,7 @@ body {
     transition-delay: 0.2s, 0.2s, 0.2s, 0.2s, 0s;
 }
 
-.close-faq a{
+.close-faq a {
     color: #1E2123;
     transition: 0.2s all ease;
 }
@@ -769,6 +784,7 @@ body {
     gap: 8.5vw;
     margin: 0 auto;
     opacity: 0;
+    transition: all 1.5s ease;
 }
 
 .first-line {
@@ -1034,12 +1050,14 @@ body {
     z-index: 0;
     box-shadow: -1.61vw 0 2.08vw rgba(0, 0, 0, 0.25);
     left: 45vw;
-    transition: 0.7s ease all;
+    transition: 0.01s ease all;
+    display: none;
 }
 
 .rules-o {
     left: 15vw;
-
+    display: block;
+    transition: 0.7s ease all;
 }
 
 .rules-o-s {
@@ -1055,12 +1073,13 @@ body {
 .nft {
     background: #CBB4DA;
     left: 27vw;
-    transition: 0.7s ease all;
+    transition: 0.01s ease all;
 }
 
 .nft-o {
     left: -3vw;
-
+    display: block;
+    transition: 0.7s ease all;
 }
 
 .nft-o-s {
@@ -1094,7 +1113,16 @@ body {
     position: absolute;
     top: 0vw;
     left: 45vw;
+    transition: 0.01s ease all;
+}
+
+.rules-main-make-visible {
+    display: block;
     transition: 0.7s ease all;
+}
+
+.team-make-visible{
+    transition: all 1.5s ease;
 }
 
 .rules-main-o {
@@ -1304,38 +1332,51 @@ body {
     border: #C7EEE2 solid;
 }
 
-.r-m-first{
+.r-m-first {
     background-image: url('../sources/RoadMap/r-m-first.png')
 }
-.r-m-second{
+
+.r-m-second {
     background-image: url('../sources/RoadMap/r-m-second.png')
 }
-.r-m-third{
+
+.r-m-third {
     background-image: url('../sources/RoadMap/r-m-third.png')
 }
-.r-m-fourth{
+
+.r-m-fourth {
     background-image: url('../sources/RoadMap/r-m-fourth.png')
 }
-.r-m-fifth{
+
+.r-m-fifth {
     background-image: url('../sources/RoadMap/r-m-fifth.png')
 }
-.r-m-sixth{
+
+.r-m-sixth {
     transform: translateX(-50%);
     background-image: url("../sources/RoadMap/r-m-sixth.png");
     width: 20.31vw;
     height: 11.4vw;
 }
-.blurForVideo{
-    top: 45.7vw;
+
+
+.vidGr {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10vw;
+    background: linear-gradient(0deg, #181A1C 5%, rgba(24, 26, 28, 0) 100%);
 }
-.disabledBtn{
+
+.disabledBtn {
     transition: none;
     opacity: 0.6;
     cursor: auto;
     transform: none;
 }
 
-.welc{
+.welc {
     position: relative;
     margin-top: 0.1vw;
     background-color: #181A1C;

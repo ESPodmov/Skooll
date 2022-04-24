@@ -17,7 +17,7 @@
 </head>
 <body id="s">
 
-<div style="position:fixed;width: 100vw; height: 101%;top: -0.5vw;left: -1vw; background-color: #181A1C; z-index: 100"
+<div style="position:fixed;width: 100%; height: 100%;top: 0;left: 0; background-color: #181A1C; z-index: 100"
      id="pre-loader">
     <video style="width: 100%; height: 100%;" src="./sources/loadingScreen.mp4" autoplay muted loop></video>
 </div>
@@ -136,13 +136,11 @@
     </div>
 </div>
 
-<div style="position: absolute; left: 0; top: -0.01vw; z-index: -1; width: 100%; height: fit-content">
-<video src="./sources/motion.mp4"
-       style="position: absolute; width: 101%; height: auto; z-index: -1; pointer-events: none; left: 0.6vw;"
-       muted autoplay loop></video>
-    <div class="img-container blurForVideo">
-        <div style="width: 115vw; position: absolute;bottom: -11vw; left: -10vw; height: 10vw; background:linear-gradient(0deg, #181A1C 5%, rgba(24, 26, 28, 0) 100%);"></div>
-    </div>
+<div style="position: absolute; left: 0; top: -0.01vw; z-index: -1; width: 100%; height: 56.22vw">
+    <video src="./sources/motion.mp4"
+           style="position: absolute; width: 100%; height: auto; z-index: -1; pointer-events: none;"
+           muted autoplay loop></video>
+    <div class="vidGr"></div>
 </div>
 
 <div class="img-container" style="float: right; top: 16vw; right: 4.7vw; position:absolute;">
@@ -193,7 +191,8 @@
 
 
 <div class="f-h">
-    <div class="btn-container" style="top: 57vw; align-self: center; text-align: center">
+    <div class="btn-container"
+         style="top: 57vw; align-self: center; text-align: center; transform: translateX(-50%); left: 50%; width: 70%">
         <div class="w-i-header needs-animation">WHAT IS
             <a class="text-underline">SKOOLL</a> NFT?
         </div>
@@ -206,16 +205,17 @@
     </div>
 
     <div style="width: 100%; height: fit-content; position: relative;top: 65vw">
-        <div class="btn-container" style="text-align: center; width: 100%;">
-            <img style="width: 127.5%; margin-left: -13.5%; pointer-events: none; position: relative; top: -10vw"
+        <div class="btn-container" style="text-align: center; width: 100%; padding: 0; margin:0; ">
+            <img style="width: 100%;margin: 0;pointer-events: none; position: relative; top: -10vw"
                  src="./sources/JoinUs_back.png">
             <img src="./sources/JoinUs.svg"
-                 style="pointer-events: none; width: 11%; height: auto; position: relative; top: -21.5vw">
+                 style="pointer-events: none; width: 8%; height: auto; position: relative; top: -21.5vw">
             <br>
             <button class="join-us-btn" style="position: relative; top: -20.5vw" id="join">Join Community</button>
         </div>
 
-        <div class="btn-container" style="align-self: center; text-align: center; top: -15vw">
+        <div class="btn-container"
+             style="align-self: center; text-align: center; top: -15vw; transform: translateX(-50%); left: 50%">
             <div class="b-e-header needs-animation">Buy and Earn</div>
             <br>
             <div class="w-i-title needs-animation">
@@ -273,76 +273,83 @@
             </div>
         </div>
 
-        <div class="btn-container" id="rules" style="top: -7vw; width: 100%;">
+        <div style="width: 100%; overflow: hidden; position: relative; top: -7vw;">
+            <div class="btn-container" id="rules" style="width: 80%; transform: translateX(-50%); left: 50%">
 
-            <div class="btn-container" style="width: 100%; display: flex; flex-direction: row">
+                <div class="btn-container" style="width: 100%; display: flex; flex-direction: row">
 
-                <div class="rules" id="rulesPart">
-                    <div class="rules-text rules-text-b" style="top: 50.3%;left: -10.15vw;">
-                        Rules
+                    <div class="rules" id="rulesPart">
+                        <div class="rules-text rules-text-b" style="top: 50.3%;left: -10.15vw;">
+                            Rules
+                        </div>
+                        <div class="rules-text rules-text-b" style="top: 50.2%; left: -10.1vw;">
+                            Rules
+                        </div>
+                        <div class="rules-text rules-text-b" style="top: 50.1%; left: -10.05vw;">
+                            Rules
+                        </div>
+                        <div class="rules-text" style="top: 50%; left: -10vw">
+                            Rules
+                        </div>
                     </div>
-                    <div class="rules-text rules-text-b" style="top: 50.2%; left: -10.1vw;">
-                        Rules
-                    </div>
-                    <div class="rules-text rules-text-b" style="top: 50.1%; left: -10.05vw;">
-                        Rules
-                    </div>
-                    <div class="rules-text" style="top: 50%; left: -10vw">
-                        Rules
+
+                    <div class="rules nft" id="nftPart">
+                        <div class="rules-text nft-text-b" style="top: 50.3%;left: -6.15vw;">
+                            NFT
+                        </div>
+                        <div class="rules-text nft-text-b" style="top: 50.2%; left: -6.1vw;">
+                            NFT
+                        </div>
+                        <div class="rules-text nft-text-b" style="top: 50.1%; left: -6.05vw;">
+                            NFT
+                        </div>
+                        <div class="rules-text" style="top: 50%; left: -6vw">
+                            NFT
+                        </div>
                     </div>
                 </div>
 
-                <div class="rules nft" id="nftPart">
-                    <div class="rules-text nft-text-b" style="top: 50.3%;left: -6.15vw;">
-                        NFT
-                    </div>
-                    <div class="rules-text nft-text-b" style="top: 50.2%; left: -6.1vw;">
-                        NFT
-                    </div>
-                    <div class="rules-text nft-text-b" style="top: 50.1%; left: -6.05vw;">
-                        NFT
-                    </div>
-                    <div class="rules-text" style="top: 50%; left: -6vw">
-                        NFT
-                    </div>
-                </div>
-            </div>
+                <div class="rules rules-main-block" id="mainPart">
+                    <div class="btn-container" style="margin: 0 auto; top: 4vw">
+                        <div class="team-h rules-t" style="margin-top: 0">You have reached the rules definition stage,
+                            the
+                            idea is very simple - mint and hold.<br> The more NFT you have, the greater the chance of
+                            additional
+                            profit.
+                        </div>
 
-            <div class="rules rules-main-block" id="mainPart">
-                <div class="btn-container" style="margin: 0 auto; top: 4vw">
-                    <div class="team-h rules-t" style="margin-top: 0">You have reached the rules definition stage, the
-                        idea is very simple - mint and hold.<br> The more NFT you have, the greater the chance of additional
-                        profit.
-                    </div>
+                        <div class="team-h rules-t" style="margin-top: 1vw">
+                            The mint price per Skooll is 40 matic and only 5 NFTs can be purchased per transaction
+                        </div>
 
-                    <div class="team-h rules-t" style="margin-top: 1vw">
-                        The mint price per Skooll is 40 matic and only 5 NFTs can be purchased per transaction
-                    </div>
+                        <div class="team-h rules-t">
+                            Every month from mint day we will give away 50% of the proceeds to Skooll holders.
+                            The 200 lucky<br> winners will each receive 0.25% of the proceeds from our team.
+                        </div>
 
-                    <div class="team-h rules-t">
-                        Every month from mint day we will give away 50% of the proceeds to Skooll holders.
-                        The 200 lucky<br> winners will each receive 0.25% of the proceeds from our team.
-                    </div>
+                        <div class="team-h rules-t">But there are some very special NFTs in the Skooll collection. They
+                            have a rare, mythical and legendary<br> rarity. And because these NFTs are highly unique,
+                            they
+                            will
+                            have special privileges.<br> Each of the rare ones will bring the owner 1%
+                            of the revenue, each of the mythical ones 3%,<br> and the legendary one 5%.
+                        </div>
 
-                    <div class="team-h rules-t">But there are some very special NFTs in the Skooll collection. They
-                        have a rare, mythical and legendary<br> rarity. And because these NFTs are highly unique, they will
-                        have special privileges.<br> Each of the rare ones will bring the owner 1%
-                        of the revenue, each of the mythical ones 3%,<br> and the legendary one 5%.
-                    </div>
+                        <div class="team-h rules-t">In other words, every month 65% of the money earned by the team will
+                            be
+                            raffled<br> off among all Skooll owners.
+                        </div>
 
-                    <div class="team-h rules-t">In other words, every month 65% of the money earned by the team will be
-                        raffled<br> off among all Skooll owners.
-                    </div>
-
-                    <div class="team-h rules-t">
-                        Each Skooll asset is a pass to participate in future events.
-                    </div>
-                    <div class="team-h rules-t">
-                        Welcome to the world of Skooll
-                    </div>
-                    <div class="welc"></div>
-                    <div class="img-container" style="position: absolute; bottom: 4vw; right: 8vw">
-                        <img src="./sources/logoRules.svg" style="width: 10vw; height: auto">
+                        <div class="team-h rules-t">
+                            Each Skooll asset is a pass to participate in future events.
+                        </div>
+                        <div class="team-h rules-t">
+                            Welcome to the world of Skooll
+                        </div>
+                        <div class="welc"></div>
+                        <div class="img-container" style="position: absolute; bottom: 4vw; right: 8vw">
+                            <img src="./sources/logoRules.svg" style="width: 10vw; height: auto">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -351,12 +358,12 @@
         </div>
 
         <div style="position: relative; top: 51vw">
-            <div id="roadmap" style="width: 125%; position:relative; left: -13%; top: -55vw">
-                <div class="img-container" style="position:relative; left: -1vw">
-                    <img src="./sources/RoadMap/r-m-background.png" style="width: 100vw; height: auto">
+            <div id="roadmap" style="width: 100%; position:relative; top: -55vw">
+                <div style="position:absolute; width: 100%">
+                    <img src="./sources/RoadMap/r-m-background.png" style="width: 100%; height: auto">
                 </div>
 
-                <div style="position:relative; top: 10vw">
+                <div style="position:relative; top: 8.5vw">
                     <div class="img-container" style="margin: 0 auto;">
                         <img src="./sources/RoadMap/r-m-skeleton.svg"
                              style="height: 108vw; transform: translateX(-49%)">
@@ -423,16 +430,18 @@
                 </div>
             </div>
 
-            <div class="btn-container" style="top: 80vw; margin: 0 auto">
+            <div class="btn-container" style="top: 80vw; margin: 0 auto; width: 100%; overflow: hidden">
 
-                <div class="img-container" style="left: -21vw">
-                    <div class="team-h"
-                         style="font-size: 40.76vw; font-weight: bold; color: #7C7C7C; filter: blur(0.09vw) opacity(0.8); letter-spacing: -2vw">
-                        Team
+                <div style="width: 100%; height: fit-content; overflow: hidden">
+                    <div style="width: 100%; left: -5.5vw; position: relative">
+                        <div class="team-h"
+                             style="font-size: 40.76vw; font-weight: bold; color: #7C7C7C; filter: blur(0.09vw) opacity(0.8); letter-spacing: -2vw">
+                            Team
+                        </div>
                     </div>
                 </div>
 
-                <div style="position: relative; top: 6vw">
+                <div style="position: absolute; top: 6vw; transform: translate(-50%); left: 50%">
                     <div class="rls-cont first-line needs-curtain-anim" style="top: 1.5vw">
                         <div class="btn-container">
                             <div class="team-container">
@@ -487,7 +496,7 @@
                 </div>
             </div>
             <div class="btn-container" id="faqs"
-                 style="top: 96vw; margin: 0 auto; width: 90%; display: flex; flex-direction: column; align-items: flex-start">
+                 style="top: 96vw; margin: 0 auto; width: 65%; display: flex; flex-direction: column; align-items: flex-start">
 
                 <div class="team-h"
                      style="font-size: 3.9vw; float: left; margin-bottom: 2vw; font-weight: bold; left: 3.5vw; position: relative">
@@ -612,7 +621,8 @@
                         </div>
 
                         <div>
-                            <div class="e-s-line"><a href="https://www.instagram.com/skoollnft" target="_blank">Instagram</a>
+                            <div class="e-s-line"><a href="https://www.instagram.com/skoollnft"
+                                                     target="_blank">Instagram</a>
                             </div>
                             <img class="e-s-img" src="./sources/Arrow.svg" style="left: 0.3vw">
                         </div>
@@ -632,6 +642,6 @@
 </script>
 <script src="../src/scripts/jquery.color.js"></script>
 </body>
-<script type="module" src="../dist/main.bundle.js"></script>
+<!--<script type="module" src="../dist/main.bundle.js"></script>-->
 
 </html>

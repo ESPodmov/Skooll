@@ -9,12 +9,12 @@ import("../styles/style.css")
 
 
 
-let nav = document.querySelectorAll(".nav");
-function editNavHeight(s){
-    nav.forEach((el)=>{
-        el.style.height = (el.clientHeight * 100 / window.innerWidth + s).toString() + "vw"//expand
-    })
-}
+// let nav = document.querySelectorAll(".nav");
+// function editNavHeight(s){
+//     nav.forEach((el)=>{
+//         el.style.height = (el.clientHeight * 100 / window.innerWidth + s).toString() + "vw"//expand
+//     })
+// }
 
 const joinCommunity = document.getElementById("join")
 
@@ -60,9 +60,14 @@ const rules = document.getElementById("rules");
 var rulesAnim = function (entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting){
-            rulesPrt.classList.add("rules-o");
-            nftPrt.classList.add("nft-o");
-            mainPrt.classList.add("rules-main-o");
+            mainPrt.classList.add("rules-main-make-visible")
+            rulesPrt.classList.add("rules-main-make-visible")
+            nftPrt.classList.add("rules-main-make-visible")
+            setTimeout(()=>{
+                rulesPrt.classList.add("rules-o");
+                nftPrt.classList.add("nft-o");
+                mainPrt.classList.add("rules-main-o");
+            }, 10)
             setTimeout(() => {
                 rulesPrt.classList.add("rules-o-s");
                 nftPrt.classList.add("nft-o-s");
@@ -86,6 +91,7 @@ el.forEach((elem) => {
     curtainObserver.observe(elem)
 });
 
+
 const walletSection = document.querySelector(".sel-wal-sec");
 
 function findParent(el) {
@@ -101,11 +107,11 @@ function findParent(el) {
 let lastElem = document.querySelector(".e-s")
 const blurForPage = document.getElementById("wal-sec")
 
-function editNavInsideOpenMethods(){
-    nav.forEach((expand)=>{
-        expand.style.height = (lastElem.getBoundingClientRect().top + lastElem.clientHeight + window.pageYOffset) * 100 / window.innerWidth + "vw"// expand
-    })
-}
+// function editNavInsideOpenMethods(){
+//     nav.forEach((expand)=>{
+//         expand.style.height = (lastElem.getBoundingClientRect().top + lastElem.clientHeight + window.pageYOffset) * 100 / window.innerWidth + "vw"// expand
+//     })
+// }
 
 function open_select_wallet() {
     if (walletSection.classList.contains("opened")) {
@@ -115,7 +121,7 @@ function open_select_wallet() {
     } else {
         walletSection.classList.add("opened");
         blurForPage.classList.add("visible")
-        editNavInsideOpenMethods()
+        // editNavInsideOpenMethods()
         blur_all_wal()
     }
 }
@@ -214,7 +220,7 @@ function openDonation(){
     } else {
         donationWindow.classList.add("o");
         blurForDonation.classList.add("visible")
-        editNavInsideOpenMethods()
+        // editNavInsideOpenMethods()
         blur_all_donation()
     }
 }
@@ -247,7 +253,7 @@ async function open_mint_window() {
     } else {
         mint_window.classList.add("m-o");
         blurForPageMint.classList.add("visible")
-        editNavInsideOpenMethods()
+        // editNavInsideOpenMethods()
         blur_all()
     }
 
@@ -287,14 +293,14 @@ faq_blocks.forEach((elem) => {
             description.classList.add("close-faq")
             description.classList.remove("opened-faq");
             plus.classList.remove("opened-plus");
-            editNavHeight(-4.4921875)
+            // editNavHeight(-4.4921875)
             setTimeout(() => {
                 description.classList.remove("close-faq")
             }, 200);
         } else {
             description.classList.add("opened-faq");
             plus.classList.add("opened-plus");
-            editNavHeight(4.4921875)
+            // editNavHeight(4.4921875)
         }
     })
 })
