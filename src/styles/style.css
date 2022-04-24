@@ -7,8 +7,6 @@ img {
 html {
 
     width: 100%;
-    /*width: 100%;*/
-    /*overflow-x: hidden;*/
     background: #181A1C;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -26,7 +24,6 @@ body {
     padding: 0;
     border: none;
     margin: 0;
-    /*overflow-x: hidden;*/
 }
 
 .nav {
@@ -34,7 +31,6 @@ body {
     top: 0;
     right: 0;
     display: inherit;
-    /*opacity: 0.5;*/
     z-index: 2;
     transition: 0.5s all ease;
     width: 100%;
@@ -88,15 +84,16 @@ body {
     width: 19vw;
     height: 27vw;
     position: fixed;
-    right: -27vw; /*2.7*/
-    top: 4.5vw; /*5.5*/
+    right: -27vw;
+    top: 4.5vw;
     border-radius: 1.3vw;
     background-color: #1F2124;
     z-index: 3;
     horiz-align: right;
     color: #f3f3f3;
     transition: all 0.5s ease;
-    filter: none
+    filter: none;
+    border: rgba(139, 139, 139, 0.25) solid 0.09vw;
 }
 
 .opened {
@@ -140,7 +137,6 @@ body {
 }
 
 .sel-wal-sec button {
-    /*margin-top: 0.5vw;*/
     position: absolute;
     top: 1vw;
     border: 0;
@@ -195,21 +191,26 @@ body {
 
 .logo {
     position: relative;
-    top: -7%;
+    top: 0;
     margin-left: 9.85%;
 }
 
 .logo-img {
-    width: 6.37vw;
+    width: 5.7vw;
     position: relative;
     z-index: 1;
 }
 
 .circles {
-    width: 4.3vw;
+    width: 4.2vw;
     position: relative;
-    top: -1.04vw;
-    left: -5.35vw;
+    top: -0.8vw;
+    left: -5vw;
+    opacity: 0.4;
+    transition: 0.3s all ease;
+}
+.logo:hover .circles{
+    opacity: 1;
 }
 
 .line {
@@ -241,8 +242,6 @@ body {
     background-color: #d7d7d7;
     transform: translateY(-0.2vw);
 }
-
-/*for active btn*/
 
 .image-2 {
     height: 70%;
@@ -564,7 +563,6 @@ body {
     transform: scale(1.05) translateY(-0.05vw);
 }
 
-/*for active btn*/
 
 .img-container {
     width: 0;
@@ -586,9 +584,9 @@ body {
 .e-s-img {
     height: auto;
     position: relative;
-    top: 0.9vw; /*1.2*/
+    top: 0.9vw;
     left: 0vw;
-    width: 0.7vw; /*1*/
+    width: 0.7vw;
 }
 
 
@@ -637,7 +635,7 @@ body {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 1.1vw; /*1.82*/
+    font-size: 1.1vw;
     line-height: 2.24vw;
     width: fit-content;
     height: fit-content;
@@ -668,7 +666,6 @@ body {
     position: absolute;
     right: 1.5vw;
     top: 0.93vw;
-    /*transform: translateY(-50%);*/
     transition: 0.5s all ease;
 }
 
@@ -712,8 +709,6 @@ body {
     position: relative;
     height: fit-content;
     margin: auto 1.5vw auto 0;
-    /*display: table-cell;*/
-    /*line-height: 1;*/
 }
 
 .opened-faq {
@@ -791,8 +786,6 @@ body {
     width: fit-content;
     align-items: stretch;
     position: relative;
-    /*left: 3vw;*/
-    /*top: 2.5vw;*/
     gap: 8.5vw;
     margin: 0 auto;
     opacity: 0;
@@ -947,7 +940,6 @@ body {
     top: 1.3vw;
     left: 56%;
     position: relative;
-    /*height: 1.7vw;*/
     text-align: center;
     display: flex;
     flex-direction: column;
