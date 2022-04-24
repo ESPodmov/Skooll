@@ -481,7 +481,7 @@ function initializeClock(endTime) {
     let timeInterval = setInterval(updateClock, 1000);
 }
 
-let deadline = "May 11 2022 19:00:00 UTC"
+let deadline = "May 19 2022 19:00:00 UTC"
 // let deadline = "April 18 2022 23:00:00 UTC"
 initializeClock(deadline);
 
