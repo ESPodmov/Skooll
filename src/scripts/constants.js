@@ -269,5 +269,4 @@ export const abi = [{"inputs": [], "stateMutability": "nonpayable", "type": "con
 
 export const contractAddress = "0x0E1a42EFa91b774014F5bB0eC34626D962399388";
 
-const chain = 'mumbai';
 

@@ -1212,6 +1212,7 @@ body {
     background-position: -0.65vw -0.35vw;
     background-size: 104.5% 106%;
     padding: 0;
+    overflow: hidden;
 }
 
 .r-m-left {
@@ -1336,29 +1337,29 @@ body {
     border: #C7EEE2 solid;
 }
 
-.r-m-first {
-    background-image: url('../sources/RoadMap/r-m-first.png')
-}
+/*.r-m-first {*/
+/*    background-image: url('../sources/RoadMap/r-m-first.png')*/
+/*}*/
 
-.r-m-second {
-    background-image: url('../sources/RoadMap/r-m-second.webp')
-}
+/*.r-m-second {*/
+/*    background-image: url('../sources/RoadMap/r-m-second.webp')*/
+/*}*/
 
-.r-m-third {
-    background-image: url('../sources/RoadMap/r-m-third.png')
-}
+/*.r-m-third {*/
+/*    background-image: url('../sources/RoadMap/r-m-third.png')*/
+/*}*/
 
-.r-m-fourth {
-    background-image: url('../sources/RoadMap/r-m-fourth.webp')
-}
+/*.r-m-fourth {*/
+/*    background-image: url('../sources/RoadMap/r-m-fourth.webp')*/
+/*}*/
 
-.r-m-fifth {
-    background-image: url('../sources/RoadMap/r-m-fifth.webp')
-}
+/*.r-m-fifth {*/
+/*    background-image: url('../sources/RoadMap/r-m-fifth.png')*/
+/*}*/
 
 .r-m-sixth {
     transform: translateX(-50%);
-    background-image: url("../sources/RoadMap/r-m-sixth.png");
+    /*background-image: url("../sources/RoadMap/r-m-sixth.png");*/
     width: 20.31vw;
     height: 11.4vw;
 }
@@ -1390,4 +1391,13 @@ body {
     opacity: 0.6;
     left: 50%;
     transform: translateX(-50%);
+}
+
+
+.r-m-img{
+    position: absolute;
+    left: -0.65vw;
+    top: -0.35vw;
+    width: 104.5%;
+    height: 106%;
 }
