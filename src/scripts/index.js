@@ -4,12 +4,8 @@ import Web3 from "./web3.min";
 import "./jquery.color.js"
 import Moralis from "moralis";
 import {ID, URL_LINE} from "../../pr/m";
-import lazySizes from "lazysizes";
 import("../index.html")
 import("../styles/style.css")
-import(lazySizes)
-
-
 
 // let nav = document.querySelectorAll(".nav");
 // function editNavHeight(s){
@@ -17,19 +13,6 @@ import(lazySizes)
 //         el.style.height = (el.clientHeight * 100 / window.innerWidth + s).toString() + "vw"//expand
 //     })
 // }
-async function checkLoad(){
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll("img.lazyload");
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        } else {
-            lazySizes.init();
-        }
-    }
-
-checkLoad()
-
 
 const joinCommunity = document.getElementById("join")
 
